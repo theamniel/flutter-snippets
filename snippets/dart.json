@@ -3,10 +3,10 @@
     "prefix": "fstless",
     "body": [
       "class ${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/} extends StatelessWidget {",
-      "const ${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/}({ Key? key }) : super(key: key);",
+      "  const ${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/}({super.key});",
       "",
       "  @override",
-      "  Widget build(BuildContext context){",
+      "  Widget build(BuildContext context) {",
       "    return ${2:Container}(${0});",
       "  }",
       "}"
@@ -18,18 +18,16 @@
     "description": "Insert a StatefulWidget",
     "body": [
       "class ${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/} extends StatefulWidget {",
-      "  const ${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/}({ Key? key }) : super(key: key);",
+      "  const ${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/}({super.key});",
       "",
       "  @override",
-      "  State<${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/}> createState() => ${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/}State();",
+      "  State<${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/}> createState() => _${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/}State();",
       "}",
       "",
-      "class ${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/}State extends State<${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/}> {",
+      "class _${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/}State extends State<${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/}> {",
       "  @override",
       "  Widget build(BuildContext context) {",
-      "    return Container(",
-      "      $2",
-      "    );",
+      "    return Container();",
       "  }",
       "}"
     ]
